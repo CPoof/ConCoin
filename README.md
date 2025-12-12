@@ -6,6 +6,7 @@ We use [*verifiable delay functions*](https://eprint.iacr.org/2018/601.pdf) to p
 1. Rust
 2. Linux or macOS
 3. SP1
+4. Git
 
 SP1 is a powerful tool which speeds up the verification of the VDF. \
 Install SP1 either from the [docs](https://docs.succinct.xyz/docs/sp1/getting-started/install) or from the following:
@@ -21,9 +22,10 @@ cargo prove --version
 # Quickstart
 Once SP1 is successfully installed and verified (as confirmed in the [Requirements](#sp1-installation) section), you are ready to clone the repository:
 ```
-git clone https://github.com/CPoof/ConCoin
+git clone https://github.com/CPoof/ConCoin.git
 cd ConCoin
 ```
+(Alternatively you can download the zip file from Github)\
 You can now run either execute or prove:
 ```
 cargo run --release -- --execute
