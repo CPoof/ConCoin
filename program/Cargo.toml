@@ -1,0 +1,17 @@
+[package]
+version = "0.1.0"
+name = "vdf-program"
+edition = "2021"
+
+[dependencies]
+alloy-sol-types = { workspace = true }
+sp1-zkvm = "5.0.8"
+vdf-lib = { path = "../lib" }
+sha2_v0_10_9 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", package = "sha2", tag = "patch-sha2-0.10.9-sp1-4.0.0" }
+hex = "0.4"
+p3-poseidon2 = "0.3.0"
+p3-field = "0.3.0"
+p3-goldilocks = "0.3.0"
+p3-symmetric = "0.3.0"
+p3-challenger = "0.3.0"
+p3-baby-bear = "0.3.0"
