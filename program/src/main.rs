@@ -18,8 +18,6 @@ use p3_field::PrimeField64;
 use p3_poseidon2::ExternalLayerConstants;
 use p3_symmetric::Permutation;
 
-use sha2_v0_10_9::{Digest, Sha256};
-
 const WIDTH: usize = 16;
 const RATE: usize = 8;
 
@@ -46,9 +44,6 @@ pub fn main() {
     // Behind the scenes, this compiles down to a custom system call which handles reading inputs
     // from the prover.
     let total_revealed_values = sp1_zkvm::io::read::<String>();
-
-    let mut hasher = Sha256::new();
-    hasher.update(total_revealed_values.as_bytes());
 
     let input_string_bytes: Vec<u8> = total_revealed_values.as_bytes().to_vec();
     let input_elements: Vec<F> = bytes_to_field_elements(&input_string_bytes);
@@ -102,26 +97,9 @@ pub fn main() {
 
     let commit_hash: String = hex_string;
 
-    // Sequential hashing VDF
-    /*let mut hash: [u8; 32] = hasher.finalize().into();
-
-    let mut counter: u64 = 0;
-    let commit_hash = loop {
-        counter += 1;
-
-        let mut new_hasher = Sha256::new();
-        new_hasher.update(hash);
-        hash = new_hasher.finalize().into();
-        if counter == 10000 {
-            break hex::encode(hash);
-        }
-    };*/
-
-    // Generate stealth address
     // Encode the public values of the program.
     let bytes = PublicValuesStruct::abi_encode(&PublicValuesStruct { commit_hash });
     // Commit to the public values of the program. The final proof will have a commitment to all the
     // bytes that were committed to.
     sp1_zkvm::io::commit_slice(&bytes);
-    //Commit stealth address
 }
