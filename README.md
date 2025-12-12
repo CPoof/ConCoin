@@ -1,6 +1,7 @@
 # ConCoin
 A cryptocurrency with provable and unbiased randomness. \
-We use [*verifiable delay functions*](https://eprint.iacr.org/2018/601.pdf) to prevent the Last Revealer Attack, which can lead to biased randomness. 
+We use [*verifiable delay functions*](https://eprint.iacr.org/2018/601.pdf) to prevent the Last Revealer Attack, which can lead to biased randomness. \
+See the [brief documentation](https://github.com/user-attachments/files/24119530/Strong.VDF.pdf) for more information.
 
 # Requirements
 1. Rust
