@@ -54,14 +54,7 @@ fn main() -> Result<()> {
     // Setup the inputs.
     let mut stdin = SP1Stdin::new();
 
-    // Passing a struct
-    // let public_values = PublicValuesStruct {
-    //commit_hash: commit_hash_from_args,
-    //};
-
     stdin.write(&args.commit_hash);
-
-    //println!("n: {}", args.commit_hash);
 
     if args.execute {
         // Execute the program
@@ -73,12 +66,6 @@ fn main() -> Result<()> {
         let PublicValuesStruct { commit_hash } = decoded;
 
         println!("Commited hash: {}", commit_hash);
-
-        assert_eq!(
-            "000000006358d266000000003796a07a0000000071fae31e00000000408523c400000000336eac3c00000000403007de0000000061411f1a000000006f47a201",
-            commit_hash
-        );
-        println!("Values are correct!");
 
         // Record the number of cycles executed.
         println!("Number of cycles: {}", report.total_instruction_count());
