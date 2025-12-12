@@ -21,7 +21,7 @@ cargo prove --version
 # Quickstart
 Once SP1 is successfully installed and verified (as confirmed in the [Requirements](#sp1-installation) section), you are ready to clone the repository:
 ```
-git clone git@github.com:CPoof/ConCoin.git
+git clone https://github.com/CPoof/ConCoin
 cd ConCoin
 ```
 You can now run either execute or prove:
