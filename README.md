@@ -34,5 +34,5 @@ cargo run --release -- --prove
 ```
 
 # Security
-While the underlying modules such as SP1 and Plonky3 have been audited, ConCoin is currently in the Pre-Alpha phase.\
+While the underlying modules such as SP1 and Plonky3 have been audited, ConCoin is currently in the early Alpha phase.\
 If you find a critical bug, please report it by making a issue.
